@@ -1,6 +1,6 @@
 import { auth } from '../../../../auth';
 
-export const GET = auth;
-export const POST = auth;
+export const GET: any = (req: Request) => auth(req as unknown as any);
+export const POST: any = (req: Request) => auth(req as unknown as any);
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';

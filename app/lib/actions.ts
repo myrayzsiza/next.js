@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { sql } from './db';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -174,7 +174,7 @@ export async function register(
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = bcrypt.hashSync(password, 10);
     await sql`
       INSERT INTO users (name, email, password)
       VALUES (${name}, ${email}, ${hashedPassword})
