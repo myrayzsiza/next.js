@@ -1,5 +1,5 @@
 .sidenav {
-  width: 280px;
+  width: 320px;
   min-height: 100vh;
   background: #ffffff;
   display: flex;
@@ -9,23 +9,31 @@
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
 }
 
+@media (max-width: 767px) {
+  .sidenav {
+    display: none;
+  }
+}
+
 .brandCard {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.75rem 1.5rem;
-  border-radius: 2rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1rem;
   background: #2563eb;
   box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
+  min-height: 160px;
+  justify-content: flex-start;
 }
 
 .brandIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 1rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
   font-size: 1.4rem;
@@ -35,6 +43,12 @@
   color: white;
   font-size: 1.75rem;
   font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .brandLogo {
+    font-size: 2rem;
+  }
 }
 
 .nav {
@@ -47,13 +61,14 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 1rem 1.1rem;
-  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
   background: white;
   color: #0f172a;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  font-size: 0.95rem;
 }
 
 .link:hover,
@@ -67,6 +82,7 @@
   background: #dbeafe;
   color: #1d4ed8;
   border-color: #bfdbfe;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .icon {
