@@ -2,13 +2,11 @@
 
 import { z } from 'zod';
 import bcrypt from 'bcrypt';
-import postgres from 'postgres';
+import { sql } from './db';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { AuthError } from 'next-auth';
 import { signIn } from '@/auth';
-
-const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 const FormSchema = z.object({
   id: z.string(),
