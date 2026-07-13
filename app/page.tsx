@@ -30,20 +30,22 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
-          <Image
-            src="https://h8DxKfmAPhn8O0p3.public.blob.vercel-storage.com/learn/dark/dashboard.png"
-            width={1000}
-            height={760}
-            alt="Screenshots of the dashboard project showing desktop version"
-            className="hidden md:block"
-          />
-          <Image
-            src="https://h8DxKfmAPhn8O0p3.public.blob.vercel-storage.com/learn/dark/dashboard-mobile.png"
-            width={360}
-            height={760}
-            alt="Screenshot of the dashboard project showing mobile version"
-            className="block md:hidden"
-          />
+          <div className="flex items-center justify-center w-full overflow-hidden">
+            <Image
+              src="/hero-desktop.png"
+              width={700}
+              height={532}
+              alt="Screenshots of the dashboard project showing desktop version"
+              className="hidden md:block max-w-full h-auto rounded-lg shadow-lg"
+            />
+            <Image
+              src="/hero-mobile.png"
+              width={360}
+              height={420}
+              alt="Screenshot of the dashboard project showing mobile version"
+              className="block md:hidden max-w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </main>
