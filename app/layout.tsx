@@ -1,4 +1,5 @@
 import './ui/global.css';
+import SideNav from './ui/sidenav';
 import { inter } from './ui/fonts';
 import { Metadata } from 'next';
 
@@ -17,7 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <div className="app-shell">
+          <SideNav />
+          <main className="page-content">
+            <div className="main-content">{children}</div>
+          </main>
+        </div>
+      </body>
     </html>
   );
 }
