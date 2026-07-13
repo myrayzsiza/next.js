@@ -117,6 +117,16 @@ export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
 ) {
+  const email = formData.get('email')?.toString().trim().toLowerCase();
+
+  if (email) {
+    const existingUser = await sql`SELECT id FROM users WHERE LOWER(email) = ${email}`;
+
+    if (existingUser.length === 0) {
+      return 'Account not found.';
+    }
+  }
+
   try {
     await signIn('credentials', formData);
   } catch (error) {
